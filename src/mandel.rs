@@ -10,11 +10,12 @@ pub fn mandelbrot(
 	let mut iter = 0;
 
 	while z_re * z_re + z_im * z_im <= 4.0 && iter < max_iter {
-		let temp = z_re * z_re + z_im * z_im + c_re;
+		
+        let temp_z_re = z_re * z_re - z_im * z_im + c_re;
 
 		z_im = 2.0 * z_re * z_im + c_im;
 
-		z_re = temp;
+		z_re = temp_z_re;
 
 		iter += 1;
 	}
@@ -34,9 +35,10 @@ pub fn pixel_to_complex(
 ) -> (f64, f64) {
 
     let aspect_ratio = width as f64 / height as f64;
+    let scale = 3.0 / zoom;
 
-    let scaled_x = (x as f64 / width as f64 - 0.5) * 3.0 * aspect_ratio / zoom + offset_x;
-    let scaled_y = (y as f64 / height as f64 - 0.5) * 3.0 / zoom + offset_y;
+    let scaled_x = (x as f64 / width as f64 - 0.5) * scale * aspect_ratio + offset_x;
+    let scaled_y = (y as f64 / height as f64 - 0.5) * scale + offset_y;
 
     (scaled_x, scaled_y)
 }
