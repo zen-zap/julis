@@ -104,10 +104,13 @@ fn main() {
 
                 // "delta" tells us how much we moved
 				let scroll_amount = match delta {
+                    // for mousewheel
 					winit::event::MouseScrollDelta::LineDelta(_, y) => y as f64,
+                    // for trackpads
 					winit::event::MouseScrollDelta::PixelDelta(pos) => pos.y,
 				};
 
+                // scale the zoom to have some smooth slow zooming
 				if scroll_amount > 0.0 {
 					zoom *= zoom_factor;
 				} else {
@@ -128,6 +131,7 @@ fn main() {
 				window_id: _,
 				event: WindowEvent::CursorMoved { device_id: _, position },
             } => {
+                // raw cursor position
 				mouse_pos = (position.x as f64, position.y as f64);
 			},
 			_ => {
