@@ -10,7 +10,3 @@ So just run it and admire it!✨
 > Maybe you can make the rendering faster or change the color palette for the better. <br>
 > I don't really have much idea about the graphics here.
 > <br> I have never worked with any graphics thingy in rust .. I might in the future tho <br>
-
-I plan to make a medium artice on this explaining a little about `mandelbrot sets`, `winit`, `pixels`, etc. Stay Tuned!
-
-I'll put the link when I'm done with that. 
