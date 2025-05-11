@@ -1,4 +1,4 @@
-### So here's the Mandelbrot Set!
+### So here's the [Mandelbrot Set](https://medium.com/@Zeph340/fractals-9bd35b7d0d96)!
 
 ![image](https://github.com/user-attachments/assets/fddc251d-4699-43cb-96fc-377a05e2a940)
 
